@@ -1,0 +1,109 @@
+.mainlist ul{
+	display: inline-block;
+}
+.mainlist li{
+	width:180px;
+}
+a.header:visited{
+    color:black;
+    text-decoration:none;
+}
+a.header:hover{
+    color:black;
+    text-decoration:none;
+}
+a.header:link{
+    color:black;
+    text-decoration:none;
+}
+.catagory ul{
+	display: inline-block;
+    margin-left: 283px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding:0;
+}
+.catagory a{
+	display: block;
+}
+.catagory img{
+	width:150px;
+	height:150px;
+}
+.catagory li{
+    list-style-type: none;
+    display:inline-block;
+}
+.text{
+    float:right;
+    margin-right: 210px;
+    margin-top: 10px;
+}
+a.list{
+    display:block;
+    padding:8px 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+}
+.center{
+	margin: 0 auto;
+	width: 280px;
+	height: 60px;
+}
+body{
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+input.search{
+    width:350px;
+    height:26px;
+}
+.search input[type=text]{
+	border-radius: 10px;
+    padding-bottom: 9px;
+    padding-left: 27px;
+}
+.search{
+	position: relative;
+	display: inline-block;
+}
+.search i{
+	position:absolute;
+	left: 0;
+	top: 8px;
+	padding: 5px 5px;;
+	color: #aaa;
+	transition:.3s;
+}
+.search input[type=text]:focus + i{
+	color: dodgerBlue;
+}
+input.search{
+	border: 2px solid #aaa;
+	margin: 8px 0;
+	outline: none;
+	padding: 8px;
+	box-sizing: border-box;
+}
+input.search:focus{
+	border-color: dodgerBlue;
+	box-shadow: 0 0 8px 0 dodgerBlue;
+}
+input.pwrite{
+	width: 694px;
+	border: none;
+	border-bottom: 1px solid #d89b11;
+	margin-left: 18px;
+}
+input.pwrite:focus { outline:none; }
+a.title{
+	width: 700px;
+	display: block;
+	margin: 0 auto;
+}
+img.title{
+	width: 700px;
+}

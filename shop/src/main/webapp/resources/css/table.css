@@ -1,0 +1,61 @@
+body
+{
+	line-height: 1.6em;
+}
+#hor-minimalist-b
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;
+	background: #fff;
+	margin: 45px;
+	width: 480px;
+	border-collapse: collapse;
+	text-align: left;
+}
+#hor-minimalist-b th
+{
+	font-size: 14px;
+	font-weight: normal;
+	padding: 10px 8px;
+	border-bottom: 2px solid #ddd1ad;
+	text-align: center;
+	border-top: 4px solid #ffdc75;
+    background: #ffe599;
+}
+#hor-minimalist-b td
+{
+	border-bottom: 1px solid #ccc;
+	padding: 6px 8px;
+}
+#hor-minimalist-b tbody tr:hover td
+{
+	background: #fff4d4;
+}
+
+#hor-minimalist-c
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;
+	background: #fff;
+	margin: 45px;
+	margin-left:10%; 
+	margin-right:100px; 
+	width:1000px;
+	border-collapse: collapse;
+	text-align: left;
+}
+#hor-minimalist-c th
+{
+	font-size: 14px;
+	font-weight: normal;
+	padding: 10px 8px;
+	border-bottom: 2px solid #ddd1ad;
+	text-align: center;
+	border-top: 4px solid #ffdc75;
+    background: #ffe599;
+}
+#hor-minimalist-c td
+{
+	border-bottom: 1px solid #ccc;
+	padding: 6px 8px;
+}

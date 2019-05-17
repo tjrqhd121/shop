@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.js.mapper.ProductMapper">
+  	
+  	<insert id="create">
+		insert into product(category, pname, price, quantity, text) 
+		values(#{category}, #{pname}, #{price}, #{quantity}, #{text})
+  	</insert>
+
+  	<select id="read" resultType="com.inhatc.vo.ProductVO">
+  		select *
+  		from product natural join thumbnail
+  		where pno = #{pno}
+  	</select>
+
+  	<update id="update">
+  		update product
+  		set category = #{category},
+  			pname = #{pname},
+  			price = #{price},
+  			quantity = #{quantity},
+  			text = #{text}
+		where pno = #{pno}	
+  	</update>
+  		
+  	<delete id="delete">
+  		delete 
+  		from product 
+  		where pno = #{pno}
+  	</delete>
+
+  	<select id="list" resultType="com.inhatc.vo.ProductVO">
+  		<![CDATA[
+  			select pno,pname,price,quantity,fullname 
+  			from product natural join thumbnail
+  			order by pno desc
+  		]]>
+  	</select>
+  	
+  	<select id="healthy_list" resultType="com.inhatc.vo.ProductVO">
+  		<![CDATA[
+  			select pno,pname,category,price,quantity,fullname 
+  			from product natural join thumbnail
+  			where category = 'healthy'
+  			order by pno desc
+  		]]>
+  	</select>
+  	
+  	<select id="object_list" resultType="com.inhatc.vo.ProductVO">
+  		<![CDATA[
+  			select pno,pname,category,price,quantity,fullname 
+  			from product natural join thumbnail
+  			where category = 'object'
+  			order by pno desc
+  		]]>
+  	</select>
+  	
+  	<select id="mass_list" resultType="com.inhatc.vo.ProductVO">
+  		<![CDATA[
+  			select pno,pname,category,price,quantity,fullname 
+  			from product natural join thumbnail
+  			where category = 'mass'  			
+  			order by pno desc
+  		]]>
+  	</select>
+  	  	  	  	
+  	<insert id="addAttach">
+  		insert into thumbnail(fullname,pno) values(#{fullName},(select max(pno) from product))
+  	</insert>
+  	
+	<select id="getAttach" resultType="string">
+		select fullname from thumbnail where pno = #{pno} order by regdate
+	</select>
+	
+	<delete id="deleteAttach">
+		delete from thumbnail where pno = #{pno}
+	</delete>
+	
+	<insert id="replaceAttach">
+		insert into thumbnail(fullname, pno) values (#{fullName}, #{pno})
+	</insert>
+	
+	<select id="cartlist_read" resultType="com.inhatc.vo.ProductVO">
+		select cno,fullname,p_count,price,pname 
+		from cartlist NATURAL JOIN login NATURAL JOIN product NATURAL JOIN thumbnail 
+		where id = #{id}
+	</select>
+	
+  	<insert id="cartlist_insert" parameterType="hashmap">
+  		insert into cartlist(id,pno,p_count) values(#{id},#{pno},#{p_count})
+  	</insert>
+  		
+	<select id="cartlist_select" resultType="int">
+		select count(*)
+		from cartlist 
+		where pno = #{pno} and id = #{id}
+	</select>
+	
+  	<delete id="delete_cartlist" parameterType="hashmap">
+  		delete 
+  		from cartlist 
+  		where cno = #{cno} and id= #{id}
+  	</delete>
+	
+  </mapper>
