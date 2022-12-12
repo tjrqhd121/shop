@@ -91,22 +91,23 @@
 	var regexp = /\B(?=(\d{3})+(?!\d))/g;
 	
 	function init() {
-		sell_price = document.form.sell_price.value;
-		p_count = document.form.p_count.value;
-		document.form.sum.value = sell_price.toString().replace(regexp,',');
+		sell_price = document.getElementById("sell_price").value;
+		p_count = document.getElementById("p_count").value;
+		document.getElementById("sum").value = sell_price.toString().replace(regexp,',');
 		change();
 	}
+	
 	function add () {
-		hm = document.form.p_count;
-		sum = document.form.sum;
+		hm = document.getElementById("p_count");
+		sum = document.getElementById("sum");
 		hm.value ++ ;
 		var sumint = parseInt(hm.value) * sell_price;
 		sum.value = sumint.toString().replace(regexp,',');
 	}
 
 	function del () {
-		hm = document.form.p_count;
-		sum = document.form.sum;
+		hm = document.getElementById("p_count");
+		sum = document.getElementById("sum");
 			if (hm.value > 1) {
 				hm.value -- ;
 				var sumint = parseInt(hm.value) * sell_price;
@@ -115,9 +116,8 @@
 	}
 
 	function change () {
-		hm = document.form.p_count;
-		sum = document.form.sum;
-
+		hm = document.getElementById("p_count");
+		sum = document.getElementById("sum");
 			if (hm.value < 0) {
 				hm.value = 0;
 			}
